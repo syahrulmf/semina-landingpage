@@ -122,8 +122,8 @@ export default function DetailPage({ detailPage, id }) {
             <hr />
 
             <h6>Get Ticket</h6>
-            {detailPage.tickets.map((ticket) => (
-              <>
+            {detailPage.tickets.map((ticket, index) => (
+              <div key={index}>
                 {ticket.statusTicketCategories ? (
                   <>
                     <div className="price my-3">
@@ -157,7 +157,7 @@ export default function DetailPage({ detailPage, id }) {
                 ) : (
                   ""
                 )}
-              </>
+              </div>
             ))}
           </div>
         </div>
