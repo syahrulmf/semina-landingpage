@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import NavLink from "../Navlink";
 
 export default function Navbar() {
@@ -15,9 +16,18 @@ export default function Navbar() {
   });
 
   const handleLogout = () => {
-    console.log("click");
+    toast.success("berhasil sign out", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
     Cookies.remove("token");
-    router.push("/");
+    router.push("/signin");
   };
 
   return (
