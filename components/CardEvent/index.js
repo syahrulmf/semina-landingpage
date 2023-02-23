@@ -16,7 +16,7 @@ export default function CardEvent({ data, title, subTitle }) {
                 {data.tickets.map((t, index) => (
                   <span className="badge-pricing" key={index}>
                     {t.statusTicketCategories
-                      ? t.price === 0
+                      ? t.price === null
                         ? "free"
                         : `Rp. ${t.price}`
                       : ""}

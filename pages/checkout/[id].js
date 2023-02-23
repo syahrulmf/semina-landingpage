@@ -53,7 +53,7 @@ export default function Checkout({ detailPage }) {
               {detailPage.tickets.map((ticket) => (
                 <>
                   {ticket._id === ticketId
-                    ? ticket.price === 0
+                    ? ticket.price === null
                       ? "free"
                       : `$${ticket.price}`
                     : ""}
